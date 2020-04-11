@@ -3,7 +3,4 @@ venv/
 *.zip
 *.db
 __pycache__/
-
-# Ignore the txt and xml directories
-txt/
-xml/
+tmp/

@@ -32,7 +32,7 @@ def do_diags(node, sectionID, exts):
     if diag_code in icdcodes:
         rec = ICD10Code.create(diag_code=icdcodes[diag_code]['code'], short_desc=icdcodes[diag_code]['short_desc'],
                                long_desc=icdcodes[diag_code]['long_desc'], subcat_id=sectionID)
-        rec.save()
+        # rec.save()
 
     seventh_char = node.find('sevenChrDef')
     if seventh_char is None:
@@ -56,7 +56,7 @@ def do_diags(node, sectionID, exts):
                                        short_desc=icdcodes[ext_code]['short_desc'],
                                        long_desc=icdcodes[ext_code]['long_desc'], subcat_id=sectionID,
                                        ext_code=ext[0], ext_desc=ext[1])
-                rec.save()
+                # rec.save()
 
     else:
         # not a leaf, check for 7th char extensions
@@ -68,7 +68,7 @@ def do_chapter(chap):
     category_id = chap.find('name').text
     category = chap.find('desc').text
     rec = ICD10Category.create(category_name=category, category_id=category_id)
-    rec.save()
+    # rec.save()
 
     print(f"CATEGORY {category_id}: {category}")
     for section in chap.iter('sectionRef'):
@@ -81,7 +81,7 @@ def do_chapter(chap):
             subCategories[section_id] = True
             rec = ICD10SubCategory.create(subcat_id=section_id, first=first_code, last=last_code, subcat=section_name,
                                           category=category, category_id=category_id)
-            rec.save()
+            # rec.save()
 
         # print(section_id + ': ' +section_name)
     for section in chap.findall('section'):
@@ -133,7 +133,7 @@ if __name__ == '__main__':
 
     for chap in root.iter('chapter'):
         do_chapter(chap)
-        db.commit()
+        db.commit() # commit db after every chapter just because
         # print(chap.find('desc').text)
 
     db.commit()

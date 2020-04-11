@@ -19,7 +19,7 @@ TABLEFILE="2020-ICD-10-CM-Code-Tables.zip"
 if [ ! -f $TABLEFILE ]; then
   curl -O "https://www.cms.gov/Medicare/Coding/ICD10/Downloads/"${TABLEFILE}
 fi
-if [ ! -f $TABLEFILE ]; then
+if [ -f $TABLEFILE ]; then
   unzip -oj ${TABLEFILE} "*/icd10cm_tabular_????.xml"
 fi
 popd
