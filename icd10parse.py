@@ -1,11 +1,9 @@
 import xml.etree.ElementTree as ET
-import csv
 import sys
-import sqlite3
 from itertools import zip_longest as izip_longest  # name change in Py 3.x
 from itertools import accumulate  # added in Py 3.2
-from icd10sql import *
-
+from peewee import *
+from icd10sql import ICD10Category, ICD10SubCategory, ICD10Code, ICD10RelatedTerm
 
 def trim_newlines(data):
     data3 = []
@@ -102,11 +100,11 @@ if __name__ == '__main__':
         exit(0)
 
     # migrating to pewee, but changing how I want to do any of this
-    pdb = SqliteDatabase('icd10codes.db')
-    pdb.bind([ICD10Code, ICD10Category, ICD10SubCategory, ICD10RelatedTerm])
-    pdb.connect()
-    pdb.drop_tables([ICD10Code, ICD10Category, ICD10SubCategory, ICD10RelatedTerm])
-    pdb.create_tables([ICD10Category, ICD10SubCategory, ICD10Code, ICD10RelatedTerm])
+    db = SqliteDatabase('icd10codes.db')
+    db.bind([ICD10Code, ICD10Category, ICD10SubCategory, ICD10RelatedTerm])
+    db.connect()
+    db.drop_tables([ICD10Code, ICD10Category, ICD10SubCategory, ICD10RelatedTerm])
+    db.create_tables([ICD10Category, ICD10SubCategory, ICD10Code, ICD10RelatedTerm])
 
     # first parse the fixed-with text file of short/long descriptions
     # creating the large dict of icdcodes with code, long_desc, short_desc values
@@ -135,7 +133,8 @@ if __name__ == '__main__':
 
     for chap in root.iter('chapter'):
         do_chapter(chap)
+        db.commit()
         # print(chap.find('desc').text)
 
-    pdb.commit()
-    pdb.close()
+    db.commit()
+    db.close()

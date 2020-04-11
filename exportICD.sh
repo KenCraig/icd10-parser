@@ -1,5 +1,7 @@
+#docker run -it --rm -v "$PWD":/app -w /app python:3.7-slim bash
 
-docker run -it --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp python:3.8-slim python icd10parse.py xml/icd10cm_tabular_2020.xml txt/icd10cm_order_2020.txt
+#dump some csv versions of our data
+sqlite3 -header -csv icd10codes.db "select diag_code  as code,short_desc,long_desc,lower(long_desc) as long_desc_search,cats.category_name as category,subcats.subcat     as subcat from icd10code left join icd10subcategory subcats on icd10code.subcat_id = subcats.subcat_id left join icd10category cats on subcats.category_id = cats.category_id;" > final_icd10.csv
+sqlite3 -header -csv icd10codes.db "select category_id, category_name from icd10category;" > final_icd10category.csv
+sqlite3 -header -csv icd10codes.db "select subcat_id, subcat, category_name from icd10subcategory left join icd10category cats on icd10subcategory.category_id = cats.category_id;" > final_icd10subcats.csv
 
-sqlite3 -csv -header icd10merge.db 'select txtcodes.code as code, txtcodes.short_desc, txtcodes.long_desc, lower(txtcodes.long_desc) as long_desc_search, xmlsubcats.category, xmlsubcats.subcat
-from txtcodes left join xmlcodes x on x.code = txtcodes.code left join xmlsubcats on xmlsubcats.id = x.subcatid order by code;' > final_icd10.csv
