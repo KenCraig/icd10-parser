@@ -6,6 +6,7 @@ from itertools import zip_longest as izip_longest  # name change in Py 3.x
 from itertools import accumulate  # added in Py 3.2
 from icd10sql import *
 
+
 def trim_newlines(data):
     data3 = []
     data2 = data.split('\n')
@@ -27,11 +28,13 @@ def make_parser(fieldwidths):
     return parse
 
 
-def do_diags(node, category, sectionID, exts):
+def do_diags(node, sectionID, exts):
     diag_code = node.find('name').text
     diag_desc = node.find('desc').text
-    icd10CSV.writerow((diag_code, diag_desc, category, sectionID, subCategories[sectionID]))  # write to a .csv file
-    db.execute('INSERT into xmlcodes (code, diag_name, subcatid) VALUES (?, ?, ?)', (diag_code, diag_desc, sectionID))
+    if diag_code in icdcodes:
+        rec = ICD10Code.create(diag_code=icdcodes[diag_code]['code'], short_desc=icdcodes[diag_code]['short_desc'],
+                               long_desc=icdcodes[diag_code]['long_desc'], subcat_id=sectionID)
+        rec.save()
 
     seventh_char = node.find('sevenChrDef')
     if seventh_char is None:
@@ -48,44 +51,49 @@ def do_diags(node, category, sectionID, exts):
             if len(diag_code) > 3:
                 ext_code = (diag_code + 'XXXXXX')[0:7] + ext[0]
             else:
-                ext_code = diag_code+ '.XXX' + ext[0]
+                ext_code = diag_code + '.XXX' + ext[0]
             ext_desc = diag_desc + ', ' + ext[1]
-            icd10CSV.writerow(
-                (ext_code, ext_desc, category, sectionID, subCategories[sectionID]))  # write to a .csv file
-            db.execute('INSERT into xmlcodes (code, diag_name, subcatid, ext_char, ext_desc) VALUES (?, ?, ?, ?, ?)',
-                       (ext_code, ext_desc, sectionID, ext[0], ext[1]))
+            if ext_code in icdcodes:
+                rec = ICD10Code.create(diag_code=icdcodes[ext_code]['code'],
+                                       short_desc=icdcodes[ext_code]['short_desc'],
+                                       long_desc=icdcodes[ext_code]['long_desc'], subcat_id=sectionID,
+                                       ext_code=ext[0], ext_desc=ext[1])
+                rec.save()
 
     else:
         # not a leaf, check for 7th char extensions
         for diag in node.findall('diag'):
-            do_diags(diag, category, sectionID, extensions)
+            do_diags(diag, sectionID, extensions)
 
 
 def do_chapter(chap):
+    category_id = chap.find('name').text
     category = chap.find('desc').text
-    print('CATEGORY: ' + category)
+    rec = ICD10Category.create(category_name=category, category_id=category_id)
+    rec.save()
+
+    print(f"CATEGORY {category_id}: {category}")
     for section in chap.iter('sectionRef'):
         section_id = section.get('id')
         first_code = section.get('first')
         last_code = section.get('last')
         section_name = trim_newlines(section.text)
-        subCategories[section_id] = {"name": section_name, "first": first_code, "last":last_code, "category": category}
+        if section_id not in subCategories:
+            # subCategories[section_id] = {"name": section_name, "first": first_code, "last": last_code, "category": category}
+            subCategories[section_id] = True
+            rec = ICD10SubCategory.create(subcat_id=section_id, first=first_code, last=last_code, subcat=section_name,
+                                          category=category, category_id=category_id)
+            rec.save()
+
         # print(section_id + ': ' +section_name)
     for section in chap.findall('section'):
         section_id = section.get('id')
         for diag in section.findall('diag'):
-            do_diags(diag, category, section_id, [])
+            do_diags(diag, section_id, [])
 
 
 ##### main #####
 if __name__ == '__main__':
-    # migrating to pewee, but changing how I want to do any of this
-    db = SqliteDatabase('icd10codes.db')
-    db.bind([ICD10Code, ICD10SubCategory, ICD10RelatedTerm])
-    db.connect()
-    db.drop_tables([ICD10Code, ICD10SubCategory, ICD10RelatedTerm])
-    db.create_tables([ICD10SubCategory, ICD10Code, ICD10RelatedTerm])
-
     if (len(sys.argv) > 2):
         inputFile = sys.argv[1]
         txtInput = sys.argv[2]
@@ -93,45 +101,21 @@ if __name__ == '__main__':
         print("Usage: " + sys.argv[0] + " icd10cm_tabular_YYYY.xml icd10cm_codes_YYYY.txt")
         exit(0)
 
-    icd10CSV = csv.writer(open('icd10codes.csv', 'w', encoding='utf-8'), quoting=csv.QUOTE_NONNUMERIC)
-    icd10CSV.writerow(["code", "name", "category", "subcatid", "subcat"])
+    # migrating to pewee, but changing how I want to do any of this
+    pdb = SqliteDatabase('icd10codes.db')
+    pdb.bind([ICD10Code, ICD10Category, ICD10SubCategory, ICD10RelatedTerm])
+    pdb.connect()
+    pdb.drop_tables([ICD10Code, ICD10Category, ICD10SubCategory, ICD10RelatedTerm])
+    pdb.create_tables([ICD10Category, ICD10SubCategory, ICD10Code, ICD10RelatedTerm])
 
-    db = sqlite3.connect('icd10merge.db')
-    db.execute('''DROP TABLE IF EXISTS xmlcodes''')
-    db.execute('''CREATE TABLE xmlcodes
-                 (code text, diag_name text, subcatid text, ext_char text, ext_desc text )''')
-    db.execute('''DROP TABLE IF EXISTS txtcodes''')
-    db.execute('''CREATE TABLE txtcodes
-                 (code text, short_desc text, long_desc text)''')
-    db.execute('''DROP TABLE IF EXISTS xmlsubcats''')
-    db.execute('''CREATE TABLE xmlsubcats
-                 (id text, first text, last text, category text, subcat text)''')
-
-    subCategories = dict()
-
-    tree = ET.parse(inputFile)  # 'icd10cm_tabular_2020.xml'
-    root = tree.getroot()
-
-    for chap in root.iter('chapter'):
-        do_chapter(chap)
-        # print(chap.find('desc').text)
-
-    subcatCSV = csv.writer(open('subcats.csv', 'w', encoding='utf-8'), quoting=csv.QUOTE_NONNUMERIC)
-    subcatCSV.writerow(("id", "subcat"))
-    for id, rec in subCategories.items():
-        subcatCSV.writerow((id, rec['name']))
-        db.execute('INSERT into xmlsubcats (id, first, last, category, subcat) VALUES (?, ?, ?, ?, ?)',
-                   (id, rec['first'], rec['last'], rec['category'], rec['name'] ))
-
-    # Now open the fixed-with text file of short/long descriptions
+    # first parse the fixed-with text file of short/long descriptions
+    # creating the large dict of icdcodes with code, long_desc, short_desc values
     fixed = open(txtInput, 'r')
-    descCSV = csv.writer(open('icd10cm_order.csv', 'w', encoding='utf-8'), quoting=csv.QUOTE_NONNUMERIC)
-    descCSV.writerow(["code", "is_header", "short_desc", "long_desc"])
-
     fieldwidths = (-5, -1, 7, -1, 1, -1, 60, -1, 255)  # negative widths represent ignored padding fields
     parse = make_parser(fieldwidths)
 
-    print('format: {!r}, rec size: {} chars'.format(parse.fmtstring, parse.size))
+    icdcodes = dict()
+    print('Text Parser: {!r}, rec size: {} chars'.format(parse.fmtstring, parse.size))
     for line in fixed:
         fields = parse(line.rstrip('\n '))
         code = fields[0].rstrip(' ')
@@ -141,10 +125,17 @@ if __name__ == '__main__':
         is_header = 'True' if fields[1] == '0' else 'False'
         short_desc = fields[2].rstrip(' ')
         long_desc = fields[3].rstrip(' ')
-        # print('fields: {}'.format([code, is_header, short_desc, long_desc]))
-        descCSV.writerow([code, is_header, short_desc, long_desc])
-        db.execute('INSERT into txtcodes (code, short_desc, long_desc) VALUES (?, ?, ?)',
-                   (code, short_desc, long_desc ))
+        icdcodes[code] = {'code': code, 'is_header': is_header, 'short_desc': short_desc, 'long_desc': long_desc}
 
-    db.commit()
-    db.close()
+    # then parse the xml file, to associate the subcategory/category with each of the icdcodes[*] items
+    # writing into the database as we go
+    subCategories = dict()
+    tree = ET.parse(inputFile)  # 'icd10cm_tabular_2020.xml'
+    root = tree.getroot()
+
+    for chap in root.iter('chapter'):
+        do_chapter(chap)
+        # print(chap.find('desc').text)
+
+    pdb.commit()
+    pdb.close()
