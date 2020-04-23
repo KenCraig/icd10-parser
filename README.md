@@ -1,5 +1,6 @@
 # icd10parse.py
 
+
 Download CMS ICD10 files from https://www.cms.gov/Medicare/Coding/ICD10/
 The 2020 files are at https://www.cms.gov/Medicare/Coding/ICD10/2020-ICD-10-CM
 
@@ -70,3 +71,10 @@ Now you can export like this
 ```shell script
 sqlite3 -header -csv icd10codes.db "select category_id, category_name from icd10category;" > final_icd10category.csv
 ```
+
+# Acknowledgements
+I'm new to python and long out of the development game at this point, so steep learning curve, so I want to at least give some credit to 
+
+* http://happytechnologist.com/?p=340 was a model I initally started from which also pointed me at the xml library
+* https://znasibov.info/posts/2017/01/22/the_ultimate_guide_to_python_decorators does a good job of helping me to understand decorators
+ 
