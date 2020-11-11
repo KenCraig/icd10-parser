@@ -1,0 +1,857 @@
+{
+    "Entities": [
+        {
+            "Id": 0,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.6261799335479736,
+            "BeginOffset": 39,
+            "EndOffset": 45,
+            "Attributes": [
+                {
+                    "Type": "SYSTEM_ORGAN_SITE",
+                    "Score": 0.5270841717720032,
+                    "RelationshipScore": 0.9969767332077026,
+                    "Id": 1,
+                    "BeginOffset": 61,
+                    "EndOffset": 72,
+                    "Text": "body region",
+                    "Traits": []
+                }
+            ],
+            "Traits": [],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Other injury of unspecified body region",
+                    "Code": "T14.8",
+                    "Score": 0.5506736040115356
+                },
+                {
+                    "Description": "Injury, unspecified",
+                    "Code": "T14.90",
+                    "Score": 0.5394900441169739
+                },
+                {
+                    "Description": "Strain of muscle, fascia and tendon of lower back",
+                    "Code": "S39.012",
+                    "Score": 0.5230293273925781
+                },
+                {
+                    "Description": "Pain in right hand",
+                    "Code": "M79.641",
+                    "Score": 0.47285160422325134
+                },
+                {
+                    "Description": "Contusion of right lower leg",
+                    "Code": "S80.11",
+                    "Score": 0.4657285809516907
+                }
+            ]
+        },
+        {
+            "Id": 2,
+            "Text": "Polyosteoarthritis",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.9825899004936218,
+            "BeginOffset": 94,
+            "EndOffset": 112,
+            "Attributes": [],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.8128154873847961
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Other polyosteoarthritis",
+                    "Code": "M15.8",
+                    "Score": 0.453883558511734
+                },
+                {
+                    "Description": "Polyosteoarthritis, unspecified",
+                    "Code": "M15.9",
+                    "Score": 0.4261150360107422
+                },
+                {
+                    "Description": "Polyosteoarthritis",
+                    "Code": "M15",
+                    "Score": 0.4143880307674408
+                },
+                {
+                    "Description": "Secondary multiple arthritis",
+                    "Code": "M15.3",
+                    "Score": 0.2980664372444153
+                },
+                {
+                    "Description": "Unilateral primary osteoarthritis, left hip",
+                    "Code": "M16.12",
+                    "Score": 0.27991896867752075
+                }
+            ]
+        },
+        {
+            "Id": 3,
+            "Text": "multiple arthritis",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.3787061870098114,
+            "BeginOffset": 136,
+            "EndOffset": 154,
+            "Attributes": [],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.9289923906326294
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Secondary multiple arthritis",
+                    "Code": "M15.3",
+                    "Score": 0.49253731966018677
+                },
+                {
+                    "Description": "Unspecified osteoarthritis, unspecified site",
+                    "Code": "M19.90",
+                    "Score": 0.4500570595264435
+                },
+                {
+                    "Description": "Unilateral primary osteoarthritis, right knee",
+                    "Code": "M17.11",
+                    "Score": 0.3462986946105957
+                },
+                {
+                    "Description": "Pain in unspecified joint",
+                    "Code": "M25.50",
+                    "Score": 0.3436480164527893
+                },
+                {
+                    "Description": "Rheumatoid arthritis, unspecified",
+                    "Code": "M06.9",
+                    "Score": 0.335668683052063
+                }
+            ]
+        },
+        {
+            "Id": 4,
+            "Text": "Unspecified injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.6811578273773193,
+            "BeginOffset": 157,
+            "EndOffset": 175,
+            "Attributes": [
+                {
+                    "Type": "SYSTEM_ORGAN_SITE",
+                    "Score": 0.9934952855110168,
+                    "RelationshipScore": 0.9993780851364136,
+                    "Id": 5,
+                    "BeginOffset": 179,
+                    "EndOffset": 183,
+                    "Text": "head",
+                    "Traits": []
+                }
+            ],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.7838391065597534
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Unspecified injury of left hip",
+                    "Code": "S79.912",
+                    "Score": 0.40874218940734863
+                },
+                {
+                    "Description": "Unspecified injury of head",
+                    "Code": "S09.90",
+                    "Score": 0.4053451418876648
+                },
+                {
+                    "Description": "Unspecified injury of thorax",
+                    "Code": "S29.9",
+                    "Score": 0.40295812487602234
+                },
+                {
+                    "Description": "Unspecified injury of lower back",
+                    "Code": "S39.92",
+                    "Score": 0.37585586309432983
+                },
+                {
+                    "Description": "Unspecified injury of unspecified kidney",
+                    "Code": "S37.009",
+                    "Score": 0.32481738924980164
+                }
+            ]
+        },
+        {
+            "Id": 6,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.9441646337509155,
+            "BeginOffset": 215,
+            "EndOffset": 221,
+
+            "Attributes": [
+                {
+                    "Type": "DIRECTION",
+                    "Score": 0.9966495633125305,
+                    "RelationshipScore": 0.9999059438705444,
+                    "Id": 7,
+                    "BeginOffset": 225,
+                    "EndOffset": 229,
+                    "Text": "left",
+                    "Traits": []
+                },
+                {
+                    "Type": "SYSTEM_ORGAN_SITE",
+                    "Score": 0.9925306439399719,
+                    "RelationshipScore": 0.9998070597648621,
+                    "Id": 8,
+                    "BeginOffset": 230,
+                    "EndOffset": 233,
+                    "Text": "hip",
+                    "Traits": []
+                }
+            ],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.78858882188797
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Unspecified injury of left lower leg",
+                    "Code": "S89.92",
+                    "Score": 0.30624982714653015
+                },
+                {
+                    "Description": "Injury, unspecified",
+                    "Code": "T14.90",
+                    "Score": 0.3052428364753723
+                },
+                {
+                    "Description": "Sciatica, left side",
+                    "Code": "M54.32",
+                    "Score": 0.2735130786895752
+                },
+                {
+                    "Description": "Strain of unspecified muscle, fascia and tendon at shoulder and upper arm level, left arm",
+                    "Code": "S46.912",
+                    "Score": 0.2652497887611389
+                },
+                {
+                    "Description": "Contusion of left lower leg",
+                    "Code": "S80.12",
+                    "Score": 0.25296518206596375
+                }
+            ]
+        },
+        {
+            "Id": 9,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.9630415439605713,
+            "BeginOffset": 265,
+            "EndOffset": 271,
+            "Attributes": [
+                {
+                    "Type": "DIRECTION",
+                    "Score": 0.9979104399681091,
+                    "RelationshipScore": 0.9994871616363525,
+                    "Id": 10,
+                    "BeginOffset": 275,
+                    "EndOffset": 279,
+                    "Text": "left",
+                    "Traits": []
+                },
+                {
+                    "Type": "SYSTEM_ORGAN_SITE",
+                    "Score": 0.9947049021720886,
+                    "RelationshipScore": 0.9989500641822815,
+                    "Id": 11,
+                    "BeginOffset": 280,
+                    "EndOffset": 288,
+                    "Text": "shoulder",
+                    "Traits": []
+                },
+                {
+                    "Type": "DIRECTION",
+                    "Score": 0.9911264777183533,
+                    "RelationshipScore": 0.9972631931304932,
+                    "Id": 12,
+                    "BeginOffset": 293,
+                    "EndOffset": 298,
+                    "Text": "upper",
+                    "Traits": []
+                },
+                {
+                    "Type": "SYSTEM_ORGAN_SITE",
+                    "Score": 0.9763237833976746,
+                    "RelationshipScore": 0.9989286065101624,
+                    "Id": 13,
+                    "BeginOffset": 299,
+                    "EndOffset": 302,
+                    "Text": "arm",
+                    "Traits": []
+                }
+            ],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.7999314665794373
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Unspecified injury of left lower leg",
+                    "Code": "S89.92",
+                    "Score": 0.3513121008872986
+                },
+                {
+                    "Description": "Injury, unspecified",
+                    "Code": "T14.90",
+                    "Score": 0.3419182300567627
+                },
+                {
+                    "Description": "Strain of unspecified muscle, fascia and tendon at shoulder and upper arm level, left arm",
+                    "Code": "S46.912",
+                    "Score": 0.30489373207092285
+                },
+                {
+                    "Description": "Sciatica, left side",
+                    "Code": "M54.32",
+                    "Score": 0.3032884895801544
+                },
+                {
+                    "Description": "Contusion of left lower leg",
+                    "Code": "S80.12",
+                    "Score": 0.28700414299964905
+                }
+            ]
+        },
+        {
+            "Id": 14,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.8877197504043579,
+            "BeginOffset": 334,
+            "EndOffset": 340,
+            "Attributes": [
+                {
+                    "Type": "SYSTEM_ORGAN_SITE",
+                    "Score": 0.9792888760566711,
+                    "RelationshipScore": 0.9968032836914062,
+                    "Id": 15,
+                    "BeginOffset": 344,
+                    "EndOffset": 348,
+                    "Text": "neck",
+                    "Traits": []
+                }
+            ],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.6971925497055054
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Strain of unspecified muscle, fascia and tendon at shoulder and upper arm level, left arm",
+                    "Code": "S46.912",
+                    "Score": 0.18259139358997345
+                },
+                {
+                    "Description": "Contusion of right forearm",
+                    "Code": "S50.11",
+                    "Score": 0.17709758877754211
+                },
+                {
+                    "Description": "Unspecified injury of left lower leg",
+                    "Code": "S89.92",
+                    "Score": 0.1527273952960968
+                },
+                {
+                    "Description": "Injury, unspecified",
+                    "Code": "T14.90",
+                    "Score": 0.14215372502803802
+                },
+                {
+                    "Description": "Other injury of unspecified body region",
+                    "Code": "T14.8",
+                    "Score": 0.12334288656711578
+                }
+            ]
+        },
+        {
+            "Id": 16,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.9661275148391724,
+            "BeginOffset": 380,
+            "EndOffset": 386,
+            "Attributes": [
+                {
+                    "Type": "DIRECTION",
+                    "Score": 0.99497389793396,
+                    "RelationshipScore": 0.999354898929596,
+                    "Id": 17,
+                    "BeginOffset": 390,
+                    "EndOffset": 395,
+                    "Text": "right",
+                    "Traits": []
+                },
+                {
+                    "Type": "SYSTEM_ORGAN_SITE",
+                    "Score": 0.9842080473899841,
+                    "RelationshipScore": 0.9998445510864258,
+                    "Id": 18,
+                    "BeginOffset": 396,
+                    "EndOffset": 403,
+                    "Text": "forearm",
+                    "Traits": []
+                }
+            ],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.7815356254577637
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Contusion of right forearm",
+                    "Code": "S50.11",
+                    "Score": 0.261934757232666
+                },
+                {
+                    "Description": "Strain of unspecified muscle, fascia and tendon at shoulder and upper arm level, left arm",
+                    "Code": "S46.912",
+                    "Score": 0.2281462699174881
+                },
+                {
+                    "Description": "Injury, unspecified",
+                    "Code": "T14.90",
+                    "Score": 0.22537599503993988
+                },
+                {
+                    "Description": "Unspecified injury of left lower leg",
+                    "Code": "S89.92",
+                    "Score": 0.18889211118221283
+                },
+                {
+                    "Description": "Pain in right hand",
+                    "Code": "M79.641",
+                    "Score": 0.17844131588935852
+                }
+            ]
+        },
+        {
+            "Id": 19,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.9639936089515686,
+            "BeginOffset": 435,
+            "EndOffset": 441,
+            "Attributes": [
+                {
+                    "Type": "DIRECTION",
+                    "Score": 0.9971902966499329,
+                    "RelationshipScore": 0.9990205764770508,
+                    "Id": 20,
+                    "BeginOffset": 445,
+                    "EndOffset": 450,
+                    "Text": "right",
+                    "Traits": []
+                },
+                {
+                    "Type": "SYSTEM_ORGAN_SITE",
+                    "Score": 0.992533802986145,
+                    "RelationshipScore": 0.999126136302948,
+                    "Id": 21,
+                    "BeginOffset": 451,
+                    "EndOffset": 459,
+                    "Text": "shoulder",
+                    "Traits": []
+                },
+                {
+                    "Type": "DIRECTION",
+                    "Score": 0.9897814989089966,
+                    "RelationshipScore": 0.9986792206764221,
+                    "Id": 22,
+                    "BeginOffset": 464,
+                    "EndOffset": 469,
+                    "Text": "upper",
+                    "Traits": []
+                },
+                {
+                    "Type": "SYSTEM_ORGAN_SITE",
+                    "Score": 0.9730440378189087,
+                    "RelationshipScore": 0.9988778233528137,
+                    "Id": 23,
+                    "BeginOffset": 470,
+                    "EndOffset": 473,
+                    "Text": "arm",
+                    "Traits": []
+                }
+            ],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.7694652676582336
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Contusion of right forearm",
+                    "Code": "S50.11",
+                    "Score": 0.3172820508480072
+                },
+                {
+                    "Description": "Injury, unspecified",
+                    "Code": "T14.90",
+                    "Score": 0.29928019642829895
+                },
+                {
+                    "Description": "Pain in right hand",
+                    "Code": "M79.641",
+                    "Score": 0.21900732815265656
+                },
+                {
+                    "Description": "Other injury of unspecified body region",
+                    "Code": "T14.8",
+                    "Score": 0.21052147448062897
+                },
+                {
+                    "Description": "Contusion of right lower leg",
+                    "Code": "S80.11",
+                    "Score": 0.20780958235263824
+                }
+            ]
+        },
+        {
+            "Id": 24,
+            "Text": "intracranial injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.9027650356292725,
+            "BeginOffset": 505,
+            "EndOffset": 524,
+            "Attributes": [],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.9080727696418762
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Injury, unspecified",
+                    "Code": "T14.90",
+                    "Score": 0.16387391090393066
+                },
+                {
+                    "Description": "Contusion of right forearm",
+                    "Code": "S50.11",
+                    "Score": 0.153579980134964
+                },
+                {
+                    "Description": "Other injury of unspecified body region",
+                    "Code": "T14.8",
+                    "Score": 0.15016256272792816
+                },
+                {
+                    "Description": "Unspecified sprain of right wrist",
+                    "Code": "S63.501",
+                    "Score": 0.1278788149356842
+                },
+                {
+                    "Description": "Strain of unspecified muscle, fascia and tendon at shoulder and upper arm level, left arm",
+                    "Code": "S46.912",
+                    "Score": 0.11868731677532196
+                }
+            ]
+        },
+        {
+            "Id": 25,
+            "Text": "loss of consciousness",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.9424009919166565,
+            "BeginOffset": 530,
+            "EndOffset": 551,
+            "Attributes": [],
+            "Traits": [
+                {
+                    "Name": "SYMPTOM",
+                    "Score": 0.5424479842185974
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Syncope and collapse",
+                    "Code": "R55",
+                    "Score": 0.471233993768692
+                },
+                {
+                    "Description": "Unspecified visual loss",
+                    "Code": "H54.7",
+                    "Score": 0.3584426939487457
+                },
+                {
+                    "Description": "Volume depletion, unspecified",
+                    "Code": "E86.9",
+                    "Score": 0.35169127583503723
+                },
+                {
+                    "Description": "Unspecified intracranial injury",
+                    "Code": "S06.9X",
+                    "Score": 0.33684390783309937
+                },
+                {
+                    "Description": "Other pulmonary collapse",
+                    "Code": "J98.19",
+                    "Score": 0.33523690700531006
+                }
+            ]
+        },
+        {
+            "Id": 26,
+            "Text": "Cervicalgia",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.9976701140403748,
+            "BeginOffset": 596,
+            "EndOffset": 607,
+            "Attributes": [],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.924761950969696
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Cervicalgia",
+                    "Code": "M54.2",
+                    "Score": 0.4829982817173004
+                },
+                {
+                    "Description": "Myalgia, unspecified site",
+                    "Code": "M79.10",
+                    "Score": 0.27841082215309143
+                },
+                {
+                    "Description": "Pain in right hip",
+                    "Code": "M25.551",
+                    "Score": 0.26108014583587646
+                },
+                {
+                    "Description": "Pain in unspecified finger(s)",
+                    "Code": "M79.646",
+                    "Score": 0.2504046857357025
+                },
+                {
+                    "Description": "Pain in right finger(s)",
+                    "Code": "M79.644",
+                    "Score": 0.2412031888961792
+                }
+            ]
+        },
+        {
+            "Id": 27,
+            "Text": "Major depressive disorder",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.7956856489181519,
+            "BeginOffset": 609,
+            "EndOffset": 634,
+            "Attributes": [],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.9703619480133057
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Major depressive disorder, single episode, unspecified",
+                    "Code": "F32.9",
+                    "Score": 0.7437811493873596
+                },
+                {
+                    "Description": "Major depressive disorder, single episode, severe without psychotic features",
+                    "Code": "F32.2",
+                    "Score": 0.5960592031478882
+                },
+                {
+                    "Description": "Major depressive disorder, single episode, moderate",
+                    "Code": "F32.1",
+                    "Score": 0.5355586409568787
+                },
+                {
+                    "Description": "Major depressive disorder, single episode, mild",
+                    "Code": "F32.0",
+                    "Score": 0.535232424736023
+                },
+                {
+                    "Description": "Major depressive disorder, single episode",
+                    "Code": "F32",
+                    "Score": 0.5157285332679749
+                }
+            ]
+        },
+        {
+            "Id": 28,
+            "Text": "Abnormal findings",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.4962208569049835,
+            "BeginOffset": 666,
+            "EndOffset": 683,
+            "Attributes": [],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.45655083656311035
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Other symptoms and signs involving appearance and behavior",
+                    "Code": "R46.89",
+                    "Score": 0.5826699137687683
+                },
+                {
+                    "Description": "Abnormal findings on diagnostic imaging of heart and coronary circulation",
+                    "Code": "R93.1",
+                    "Score": 0.5683581829071045
+                },
+                {
+                    "Description": "Abnormal brain scan",
+                    "Code": "R94.02",
+                    "Score": 0.5604291558265686
+                },
+                {
+                    "Description": "Abnormal findings on diagnostic imaging of other parts of musculoskeletal system",
+                    "Code": "R93.7",
+                    "Score": 0.5568894743919373
+                },
+                {
+                    "Description": "Abnormal findings on diagnostic imaging of other abdominal regions, including retroperitoneum",
+                    "Code": "R93.5",
+                    "Score": 0.5551859140396118
+                }
+            ]
+        },
+        {
+            "Id": 30,
+            "Text": "general symptoms and signs",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.40958285331726074,
+            "BeginOffset": 747,
+            "EndOffset": 773,
+            "Attributes": [],
+            "Traits": [
+                {
+                    "Name": "SYMPTOM",
+                    "Score": 0.4470093250274658
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Other general symptoms and signs",
+                    "Code": "R68.89",
+                    "Score": 0.8099949359893799
+                },
+                {
+                    "Description": "Other symptoms and signs involving general sensations and perceptions",
+                    "Code": "R44.8",
+                    "Score": 0.6235042810440063
+                },
+                {
+                    "Description": "Other malaise",
+                    "Code": "R53.81",
+                    "Score": 0.6085492372512817
+                },
+                {
+                    "Description": "Generalized hyperhidrosis",
+                    "Code": "R61",
+                    "Score": 0.5986453294754028
+                },
+                {
+                    "Description": "Pain, unspecified",
+                    "Code": "R52",
+                    "Score": 0.5850741267204285
+                }
+            ]
+        },
+        {
+            "Id": 32,
+            "Text": "obstructive pulmonary disease",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Score": 0.9711470603942871,
+            "BeginOffset": 784,
+            "EndOffset": 813,
+            "Attributes": [
+                {
+                    "Type": "ACUITY",
+                    "Score": 0.9706146717071533,
+                    "RelationshipScore": 0.9986183643341064,
+                    "Id": 31,
+                    "BeginOffset": 776,
+                    "EndOffset": 783,
+                    "Text": "Chronic",
+                    "Traits": []
+                }
+            ],
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.9257885217666626
+                }
+            ],
+            "ICD10CMConcepts": [
+                {
+                    "Description": "Chronic obstructive pulmonary disease, unspecified",
+                    "Code": "J44.9",
+                    "Score": 0.7762529253959656
+                },
+                {
+                    "Description": "Chronic obstructive pulmonary disease with (acute) exacerbation",
+                    "Code": "J44.1",
+                    "Score": 0.6166965961456299
+                },
+                {
+                    "Description": "Chronic obstructive pulmonary disease with acute lower respiratory infection",
+                    "Code": "J44.0",
+                    "Score": 0.5256677269935608
+                },
+                {
+                    "Description": "Chronic obstructive pyelonephritis",
+                    "Code": "N11.1",
+                    "Score": 0.5095258355140686
+                },
+                {
+                    "Description": "Pulmonary heart disease, unspecified",
+                    "Code": "I27.9",
+                    "Score": 0.42774873971939087
+                }
+            ]
+        }
+    ],
+    "ModelVersion": "0.1.0"
+}

@@ -1,0 +1,443 @@
+{
+    "Entities": [
+        {
+            "Id": 16,
+            "BeginOffset": 39,
+            "EndOffset": 45,
+            "Score": 0.6261799931526184,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": []
+        },
+        {
+            "Id": 0,
+            "BeginOffset": 61,
+            "EndOffset": 72,
+            "Score": 0.5270841717720032,
+            "Text": "body region",
+            "Category": "ANATOMY",
+            "Type": "SYSTEM_ORGAN_SITE",
+            "Traits": []
+        },
+        {
+            "Id": 17,
+            "BeginOffset": 94,
+            "EndOffset": 112,
+            "Score": 0.9825899004936218,
+            "Text": "Polyosteoarthritis",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.8128156065940857
+                }
+            ]
+        },
+        {
+            "Id": 18,
+            "BeginOffset": 136,
+            "EndOffset": 154,
+            "Score": 0.37870630621910095,
+            "Text": "multiple arthritis",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.9289923906326294
+                }
+            ]
+        },
+        {
+            "Id": 19,
+            "BeginOffset": 157,
+            "EndOffset": 175,
+            "Score": 0.6811579465866089,
+            "Text": "Unspecified injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.783839225769043
+                }
+            ]
+        },
+        {
+            "Id": 1,
+            "BeginOffset": 179,
+            "EndOffset": 183,
+            "Score": 0.9934952855110168,
+            "Text": "head",
+            "Category": "ANATOMY",
+            "Type": "SYSTEM_ORGAN_SITE",
+            "Traits": []
+        },
+        {
+            "Id": 20,
+            "BeginOffset": 215,
+            "EndOffset": 221,
+            "Score": 0.9441646337509155,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.7885888814926147
+                }
+            ]
+        },
+        {
+            "Id": 3,
+            "BeginOffset": 230,
+            "EndOffset": 233,
+            "Score": 0.9925306439399719,
+            "Text": "hip",
+            "Category": "ANATOMY",
+            "Type": "SYSTEM_ORGAN_SITE",
+            "Traits": []
+        },
+        {
+            "Id": 21,
+            "BeginOffset": 265,
+            "EndOffset": 271,
+            "Score": 0.9630415439605713,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.7999314665794373
+                }
+            ]
+        },
+        {
+            "Id": 5,
+            "BeginOffset": 280,
+            "EndOffset": 288,
+            "Score": 0.9947049021720886,
+            "Text": "shoulder",
+            "Category": "ANATOMY",
+            "Type": "SYSTEM_ORGAN_SITE",
+            "Traits": []
+        },
+        {
+            "Id": 7,
+            "BeginOffset": 299,
+            "EndOffset": 302,
+            "Score": 0.9763237833976746,
+            "Text": "arm",
+            "Category": "ANATOMY",
+            "Type": "SYSTEM_ORGAN_SITE",
+            "Traits": []
+        },
+        {
+            "Id": 22,
+            "BeginOffset": 334,
+            "EndOffset": 340,
+            "Score": 0.8877198100090027,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.6971927285194397
+                }
+            ]
+        },
+        {
+            "Id": 8,
+            "BeginOffset": 344,
+            "EndOffset": 348,
+            "Score": 0.9792888760566711,
+            "Text": "neck",
+            "Category": "ANATOMY",
+            "Type": "SYSTEM_ORGAN_SITE",
+            "Traits": []
+        },
+        {
+            "Id": 23,
+            "BeginOffset": 380,
+            "EndOffset": 386,
+            "Score": 0.9661276340484619,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.781535804271698
+                }
+            ]
+        },
+        {
+            "Id": 10,
+            "BeginOffset": 396,
+            "EndOffset": 403,
+            "Score": 0.9842080473899841,
+            "Text": "forearm",
+            "Category": "ANATOMY",
+            "Type": "SYSTEM_ORGAN_SITE",
+            "Traits": []
+        },
+        {
+            "Id": 24,
+            "BeginOffset": 435,
+            "EndOffset": 441,
+            "Score": 0.9639936089515686,
+            "Text": "injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.7694652676582336
+                }
+            ]
+        },
+        {
+            "Id": 12,
+            "BeginOffset": 451,
+            "EndOffset": 459,
+            "Score": 0.992533802986145,
+            "Text": "shoulder",
+            "Category": "ANATOMY",
+            "Type": "SYSTEM_ORGAN_SITE",
+            "Traits": []
+        },
+        {
+            "Id": 14,
+            "BeginOffset": 470,
+            "EndOffset": 473,
+            "Score": 0.9730440378189087,
+            "Text": "arm",
+            "Category": "ANATOMY",
+            "Type": "SYSTEM_ORGAN_SITE",
+            "Traits": []
+        },
+        {
+            "Id": 25,
+            "BeginOffset": 505,
+            "EndOffset": 524,
+            "Score": 0.9027650356292725,
+            "Text": "intracranial injury",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.908072829246521
+                }
+            ]
+        },
+        {
+            "Id": 26,
+            "BeginOffset": 530,
+            "EndOffset": 551,
+            "Score": 0.9424009919166565,
+            "Text": "loss of consciousness",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "SYMPTOM",
+                    "Score": 0.5424479842185974
+                }
+            ]
+        },
+        {
+            "Id": 27,
+            "BeginOffset": 596,
+            "EndOffset": 607,
+            "Score": 0.9976701140403748,
+            "Text": "Cervicalgia",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.924761950969696
+                }
+            ]
+        },
+        {
+            "Id": 28,
+            "BeginOffset": 609,
+            "EndOffset": 634,
+            "Score": 0.7956857085227966,
+            "Text": "Major depressive disorder",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.9703619480133057
+                }
+            ]
+        },
+        {
+            "Id": 29,
+            "BeginOffset": 666,
+            "EndOffset": 683,
+            "Score": 0.4962208569049835,
+            "Text": "Abnormal findings",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.4565509557723999
+                }
+            ]
+        },
+        {
+            "Id": 33,
+            "BeginOffset": 687,
+            "EndOffset": 705,
+            "Score": 0.7227408289909363,
+            "Text": "diagnostic imaging",
+            "Category": "TEST_TREATMENT_PROCEDURE",
+            "Type": "TEST_NAME",
+            "Traits": []
+        },
+        {
+            "Id": 15,
+            "BeginOffset": 725,
+            "EndOffset": 729,
+            "Score": 0.40475451946258545,
+            "Text": "body",
+            "Category": "ANATOMY",
+            "Type": "SYSTEM_ORGAN_SITE",
+            "Traits": []
+        },
+        {
+            "Id": 30,
+            "BeginOffset": 747,
+            "EndOffset": 773,
+            "Score": 0.4095824956893921,
+            "Text": "general symptoms and signs",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "SYMPTOM",
+                    "Score": 0.44700929522514343
+                }
+            ]
+        },
+        {
+            "Id": 32,
+            "BeginOffset": 784,
+            "EndOffset": 813,
+            "Score": 0.9711470603942871,
+            "Text": "obstructive pulmonary disease",
+            "Category": "MEDICAL_CONDITION",
+            "Type": "DX_NAME",
+            "Traits": [
+                {
+                    "Name": "DIAGNOSIS",
+                    "Score": 0.9257885217666626
+                }
+            ]
+        }
+    ],
+    "UnmappedAttributes": [
+        {
+            "Type": "ANATOMY",
+            "Attribute": {
+                "Type": "DIRECTION",
+                "Score": 0.9966495633125305,
+                "Id": 2,
+                "BeginOffset": 225,
+                "EndOffset": 229,
+                "Text": "left",
+                "Category": "ANATOMY",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "ANATOMY",
+            "Attribute": {
+                "Type": "DIRECTION",
+                "Score": 0.9979104399681091,
+                "Id": 4,
+                "BeginOffset": 275,
+                "EndOffset": 279,
+                "Text": "left",
+                "Category": "ANATOMY",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "ANATOMY",
+            "Attribute": {
+                "Type": "DIRECTION",
+                "Score": 0.9911264777183533,
+                "Id": 6,
+                "BeginOffset": 293,
+                "EndOffset": 298,
+                "Text": "upper",
+                "Category": "ANATOMY",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "ANATOMY",
+            "Attribute": {
+                "Type": "DIRECTION",
+                "Score": 0.99497389793396,
+                "Id": 9,
+                "BeginOffset": 390,
+                "EndOffset": 395,
+                "Text": "right",
+                "Category": "ANATOMY",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "ANATOMY",
+            "Attribute": {
+                "Type": "DIRECTION",
+                "Score": 0.9971902966499329,
+                "Id": 11,
+                "BeginOffset": 445,
+                "EndOffset": 450,
+                "Text": "right",
+                "Category": "ANATOMY",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "ANATOMY",
+            "Attribute": {
+                "Type": "DIRECTION",
+                "Score": 0.9897814989089966,
+                "Id": 13,
+                "BeginOffset": 464,
+                "EndOffset": 469,
+                "Text": "upper",
+                "Category": "ANATOMY",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICAL_CONDITION",
+            "Attribute": {
+                "Type": "ACUITY",
+                "Score": 0.9706146717071533,
+                "Id": 31,
+                "BeginOffset": 776,
+                "EndOffset": 783,
+                "Text": "Chronic",
+                "Category": "MEDICAL_CONDITION",
+                "Traits": []
+            }
+        }
+    ],
+    "ModelVersion": "1.0.0"
+}

@@ -1,2 +1,4 @@
 peewee
 openpyxl
+boto3
+jmespath

@@ -6,6 +6,15 @@
 mkdir tmp
 pushd tmp
 
+if [ $1 -lt 2021 ]; then
+  CODEROOT="https://www.cms.gov/Medicare/Coding/ICD10/Downloads/"
+  TABLEROOT="https://www.cms.gov/Medicare/Coding/ICD10/Downloads/"
+else
+    # they changed the root location for the files - grrr
+  CODEROOT="https://www.cms.gov/files/zip/"
+  TABLEROOT="https://www.cms.gov/files/zip/"
+fi
+
 if [ $1 -eq 2017 ]; then
   CODEFILE="2017-ICD10-Code-Descriptions.zip"
   TABLEFILE="2017-ICD10-Code-Tables-Index.zip"
@@ -18,12 +27,15 @@ elif [ $1 -eq 2019 ]; then
 elif [ $1 -eq 2020 ]; then
   CODEFILE="2020-ICD-10-CM-Codes.zip"
   TABLEFILE="2020-ICD-10-CM-Code-Tables.zip"
+elif [ $1 -eq 2021 ]; then
+  CODEFILE="2021-code-descriptions-tabular-order.zip"
+  TABLEFILE="2021-code-tables-and-index.zip"
 else
   print Usage: $0 [year]
 fi
 
 if [ ! -f $CODEFILE ]; then
-  curl -O "https://www.cms.gov/Medicare/Coding/ICD10/Downloads/"${CODEFILE}
+  curl -O ${CODEROOT}${CODEFILE}
 fi
 
 if [ -f $CODEFILE ]; then
@@ -31,7 +43,7 @@ if [ -f $CODEFILE ]; then
 fi
 
 if [ ! -f $TABLEFILE ]; then
-  curl -O "https://www.cms.gov/Medicare/Coding/ICD10/Downloads/"${TABLEFILE}
+  curl -O ${TABLEROOT}${TABLEFILE}
 fi
 if [ -f $TABLEFILE ]; then
   unzip -oj ${TABLEFILE} "*/icd10cm_tabular_????.xml" || unzip -oj ${TABLEFILE} "icd10cm_tabular_????.xml"

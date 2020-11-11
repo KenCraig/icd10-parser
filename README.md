@@ -2,11 +2,12 @@
 
 
 Download CMS ICD10 files from https://www.cms.gov/Medicare/Coding/ICD10/
-The 2020 files are at https://www.cms.gov/Medicare/Coding/ICD10/2020-ICD-10-CM
 
-There's a shell script to download and unzip the 2020 files
+The 20201 files are at https://www.cms.gov/Medicare/Coding/ICD10/2021-ICD-10-CM
+
+There's a shell script to download and unzip the files for 2017 through 2021
 ```shell script
-./fetch-files.sh
+./fetch-files.sh YYYY
 ```
 
 * short/long descriptions https://www.cms.gov/Medicare/Coding/ICD10/Downloads/2020-ICD-10-CM-Codes.zip
@@ -33,6 +34,8 @@ you'll end up with a sqlite3 database icd10codes.db
 
 ## Docker
 If for some reason you don't want to run with your local python, you can run this in a docker container.  Note that it will be slower because it's writing to a locally  mounted directory for the database.
+
+TODO: document Dockerfile use
 
 ```shell script
 # Fetch the files if you haven't done so already
@@ -72,6 +75,12 @@ Now you can export like this
 sqlite3 -header -csv icd10codes.db "select category_id, category_name from icd10category;" > final_icd10category.csv
 ```
 
+```shell script
+sqlite3 -header -csv icd10codes.db "select diag_code, long_desc, short_desc, subcat, category_name from icd10code left join icd10subcategory i10s on icd10code.subcat_id = i10s.subcat_id left join icd10category i10c on i10s.category_id = i10c.category_id;" > final_icd10category.csv
+
+```
+
+         
 # Acknowledgements
 I'm new to python and long out of the development game at this point, so steep learning curve, so I want to at least give some credit to 
 
