@@ -15,7 +15,16 @@ else
   TABLEROOT="https://www.cms.gov/files/zip/"
 fi
 
-if [ $1 -eq 2017 ]; then
+if [ $1 -eq 2014 ]; then
+  CODEFILE="2014-ICD10-Code-Descriptions.zip"
+  TABLEFILE="2014-ICD10-Code-Tables-and-Index.zip"
+elif [ $1 -eq 2015 ]; then
+  CODEFILE="2015-code-descriptions.zip"
+  TABLEFILE="2015-tables-index.zip"
+elif [ $1 -eq 2016 ]; then
+  CODEFILE="2016-Code-Descriptions-in-Tabular-Order.zip"
+  TABLEFILE="2016-CM-Code-Tables-and-Index.zip"
+elif [ $1 -eq 2017 ]; then
   CODEFILE="2017-ICD10-Code-Descriptions.zip"
   TABLEFILE="2017-ICD10-Code-Tables-Index.zip"
 elif [ $1 -eq 2018 ]; then
@@ -31,7 +40,8 @@ elif [ $1 -eq 2021 ]; then
   CODEFILE="2021-code-descriptions-tabular-order.zip"
   TABLEFILE="2021-code-tables-and-index.zip"
 else
-  print Usage: $0 [year]
+  echo Usage: $0 [year]
+  exit
 fi
 
 if [ ! -f $CODEFILE ]; then
@@ -45,7 +55,16 @@ fi
 if [ ! -f $TABLEFILE ]; then
   curl -O ${TABLEROOT}${TABLEFILE}
 fi
+
 if [ -f $TABLEFILE ]; then
-  unzip -oj ${TABLEFILE} "*/icd10cm_tabular_????.xml" || unzip -oj ${TABLEFILE} "icd10cm_tabular_????.xml"
+  if [ $1 -lt 2017 ]; then
+    echo 'Old naming convention, forcing to new style'
+    unzip -ojp ${TABLEFILE} "Tabular.xml" > icd10cm_tabular_${1}.xml
+  else
+    unzip -oj ${TABLEFILE} "*/icd10cm_tabular_????.xml" || unzip -oj ${TABLEFILE} "icd10cm_tabular_????.xml"
+  fi
 fi
 popd
+exit
+
+
