@@ -56,8 +56,9 @@ for x in 2016 2017 2018 2019 2020 2021; do
   ./fetch-files.sh ${x}
   touch ${PWD}/${x}_icd10codes.db  #don't think this is necessary, but just in case
   docker run -it --rm --name icd10parse -v ${PWD}/tmp:/app/tmp -v ${PWD}/${x}_icd10codes.db:/app/icd10codes.db icdparse python icd10parse.py tmp/icd10cm_tabular_${x}.xml tmp/icd10cm_order_${x}.txt
+  # export the data to my flat file used in my database
+  sqlite3 -header -csv ${x}icd10codes.db "select diag_code, long_desc, short_desc, subcat, category_name from icd10code left join icd10subcategory i10s on icd10code.subcat_id = i10s.subcat_id left join icd10category i10c on i10s.category_id = i10c.category_id;" > ICD10Codes_${x}.csv
 done
-
 ```
 
 All of the above is kind of messy, but it's really only necessary to do once a year, so it's tolerable at this point.
